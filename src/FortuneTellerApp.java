@@ -10,38 +10,54 @@ public class FortuneTellerApp {
 //Part 1
 		System.out.println("What is your first name?");
 		String firstName = input.next();
-		if (firstName.equals("quit")) {System.out.println("Nobody likes a quitter.");
-		System.exit(0);
+		if (firstName.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter.");
+			System.exit(0);
 		}
 
 		System.out.println("What is your last name?");
 		String lastName = input.next();
+		if (lastName.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter.");
+			System.exit(0);}
 
 		System.out.println("What is your age?");
-		int numberAge = input.nextInt();
-
+		String numberAge = input.next();
+		if (numberAge.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter.");
+			System.exit(0);}
+		int foo = Integer.parseInt (numberAge);
+			
 		System.out.println("What is your birth month? (1-12)");
-		int birthMonth = input.nextInt();
+		String birthMonth = input.next().toLowerCase();
+		if (birthMonth.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter.");
+			System.exit(0);}
+		int birth = Integer.parseInt (birthMonth);
 
 		System.out.println("What is your favorite ROYGBIV color? Unsure what ROYGBIV is? Type Help!");
-		String favoriteColor = input.next() .toLowerCase();
+		String favoriteColor = input.next().toLowerCase();
 
 		String needHelp = "";
 		while (favoriteColor.toLowerCase().equals("help")) {
 			needHelp = "Red, Orange, Yellow, Green, Blue, Indigo, Violet";
 			System.out.println(needHelp);
-			
+
 			favoriteColor = input.next();
-			
+
 		}
 
 		System.out.println("How many siblings do you have?");
-		int numberSibling = input.nextInt();
+		String numberSibling = input.next().toLowerCase();
+		if (numberSibling.toLowerCase().equals("quit")) {
+			System.out.println("Nobody likes a quitter.");
+			System.exit(0);}
+		int sibling = Integer.parseInt(numberSibling);
 
 //Part 2
 		String yearsRetirement = "";
 		System.out.println("Years until retirement:");
-		if (numberAge % 2 == 0) {
+		if (foo % 2 == 0) {
 			yearsRetirement = "10";
 		} else {
 			yearsRetirement = "15";
@@ -50,15 +66,15 @@ public class FortuneTellerApp {
 
 		String vacationLocation = "";
 		System.out.println("Vacation Home Location:");
-		if (numberSibling <= 0) {
+		if (sibling <= 0) {
 			vacationLocation = "Detroit";
-		} else if (numberSibling == 1) {
+		} else if (sibling == 1) {
 			vacationLocation = "Hawaii";
-		} else if (numberSibling == 2) {
+		} else if (sibling == 2) {
 			vacationLocation = "Mississippi";
-		} else if (numberSibling == 3) {
+		} else if (sibling == 3) {
 			vacationLocation = "Idaho";
-		} else if (numberSibling > 3) {
+		} else if (sibling > 3) {
 			vacationLocation = "Ohio";
 		}
 		System.out.println(vacationLocation);
@@ -84,11 +100,11 @@ public class FortuneTellerApp {
 
 		String bankBalance = "";
 		System.out.println("Bank Balance:");
-		if (birthMonth <= 4) {
+		if (birth <= 4) {
 			System.out.println("$500,000");
-		} else if ((birthMonth >= 5) && (birthMonth <= 8)) {
+		} else if ((birth >= 5) && (birth <= 8)) {
 			bankBalance = "$400,000";
-		} else if ((birthMonth >= 9) && (birthMonth <= 12)) {
+		} else if ((birth >= 9) && (birth <= 12)) {
 			bankBalance = "$300,000";
 		}
 		System.out.println(bankBalance);
@@ -98,8 +114,8 @@ public class FortuneTellerApp {
 				+ bankBalance + " in the bank, a vacation home in " + vacationLocation + " and travel by "
 				+ transportationMode + ".";
 		System.out.println(myOutput);
-
+		
 		input.close();
 
-	}
-}
+		}
+		}
