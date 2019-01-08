@@ -6,9 +6,13 @@ public class FortuneTellerApp {
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("FORTUNE TELLER");
+
 //Part 1
 		System.out.println("What is your first name?");
 		String firstName = input.next();
+		if (firstName.equals("quit")) {System.out.println("Nobody likes a quitter.");
+		System.exit(0);
+		}
 
 		System.out.println("What is your last name?");
 		String lastName = input.next();
@@ -20,12 +24,16 @@ public class FortuneTellerApp {
 		int birthMonth = input.nextInt();
 
 		System.out.println("What is your favorite ROYGBIV color? Unsure what ROYGBIV is? Type Help!");
-		String favoriteColor = input.next();
+		String favoriteColor = input.next() .toLowerCase();
+
 		String needHelp = "";
-		if (favoriteColor == "Help") {
+		while (favoriteColor.toLowerCase().equals("help")) {
 			needHelp = "Red, Orange, Yellow, Green, Blue, Indigo, Violet";
+			System.out.println(needHelp);
+			
+			favoriteColor = input.next();
+			
 		}
-		System.out.println(needHelp);
 
 		System.out.println("How many siblings do you have?");
 		int numberSibling = input.nextInt();
@@ -86,8 +94,9 @@ public class FortuneTellerApp {
 		System.out.println(bankBalance);
 
 //Part 3
-		String myOutput = firstName + lastName + " will retire in " + yearsRetirement + " years with " + bankBalance
-				+ " in the bank, a vacation home in " + vacationLocation + " and travel by " + transportationMode + ".";
+		String myOutput = firstName + " " + lastName + " will retire in " + yearsRetirement + " years with "
+				+ bankBalance + " in the bank, a vacation home in " + vacationLocation + " and travel by "
+				+ transportationMode + ".";
 		System.out.println(myOutput);
 
 		input.close();
