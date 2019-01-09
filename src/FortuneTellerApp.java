@@ -19,21 +19,24 @@ public class FortuneTellerApp {
 		String lastName = input.next();
 		if (lastName.toLowerCase().equals("quit")) {
 			System.out.println("Nobody likes a quitter.");
-			System.exit(0);}
+			System.exit(0);
+		}
 
 		System.out.println("What is your age?");
 		String numberAge = input.next();
 		if (numberAge.toLowerCase().equals("quit")) {
 			System.out.println("Nobody likes a quitter.");
-			System.exit(0);}
-		int foo = Integer.parseInt (numberAge);
-			
+			System.exit(0);
+		}
+		int foo = Integer.parseInt(numberAge);
+
 		System.out.println("What is your birth month? (1-12)");
 		String birthMonth = input.next().toLowerCase();
 		if (birthMonth.toLowerCase().equals("quit")) {
 			System.out.println("Nobody likes a quitter.");
-			System.exit(0);}
-		int birth = Integer.parseInt (birthMonth);
+			System.exit(0);
+		}
+		int birth = Integer.parseInt(birthMonth);
 
 		System.out.println("What is your favorite ROYGBIV color? Unsure what ROYGBIV is? Type Help!");
 		String favoriteColor = input.next().toLowerCase();
@@ -51,7 +54,8 @@ public class FortuneTellerApp {
 		String numberSibling = input.next().toLowerCase();
 		if (numberSibling.toLowerCase().equals("quit")) {
 			System.out.println("Nobody likes a quitter.");
-			System.exit(0);}
+			System.exit(0);
+		}
 		int sibling = Integer.parseInt(numberSibling);
 
 //Part 2
@@ -114,8 +118,8 @@ public class FortuneTellerApp {
 				+ bankBalance + " in the bank, a vacation home in " + vacationLocation + " and travel by "
 				+ transportationMode + ".";
 		System.out.println(myOutput);
-		
+
 		input.close();
 
-		}
-		}
+	}
+}
